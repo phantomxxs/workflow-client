@@ -4,6 +4,7 @@ export const SEARCH_ROUTE = "/search" as const;
 export const SETTINGS_ROUTE = "/settings" as const;
 export const USERS_ROUTES = "/users" as const;
 export const TEAMS_ROUTES = "teams" as const;
+export const PROJECTS_ROUTE = "/projects" as const;
 
 // PRIORITY LINKS
 export const URGENT_PRIORITY_LINK = "/priority/urgent";

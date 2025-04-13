@@ -1,12 +1,14 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { ChevronDown, ChevronUp, LockIcon, X } from "lucide-react";
+import { Briefcase, ChevronDown, ChevronUp, LockIcon, X } from "lucide-react";
 import React, { useState } from "react";
 import Image from "../../image";
-import { useUIStore } from "@/stores/ui-store";
+import { useUIStore } from "@/store/ui-store";
 import SidebarLinks from "./sidebar-links";
 import { priorityLinks } from "./priority-links";
 import SidebarLink from "./sidebar-link";
+import { useGetProjects } from "@/hooks/queries/projects";
+import { PROJECTS_ROUTE } from "@/routes/index";
 
 const Sidebar = () => {
   const isSidebarCollapsed = useUIStore((state) => state.isSidebarCollapsed);
@@ -16,6 +18,9 @@ const Sidebar = () => {
 
   const [showProjects, setShowProjects] = useState(false);
   const [showPriority, setShowPriority] = useState(false);
+
+  const { data: projects } = useGetProjects();
+  console.log(projects);
 
   const sidebarClassNames = `fixed flex flex-col justify-between h-[100%] shadow-xl transition-all duration-300 h-full z-40 dark:bg-black overflow-y-auto w-64`;
   return (
@@ -69,6 +74,18 @@ const Sidebar = () => {
                 <ChevronDown size={20} />
               )}
             </button>
+            {showProjects && projects && (
+              <div className="flex flex-col gap-1">
+                {projects?.map((project) => (
+                  <SidebarLink
+                    key={project.id}
+                    label={project.name}
+                    href={`${PROJECTS_ROUTE}/${project.id}`}
+                    icon={Briefcase }
+                  />
+                ))}
+              </div>
+            )}
 
             {/* PRORITY  */}
             <button

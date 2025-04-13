@@ -4,7 +4,7 @@ import {
   LOW_PRIORITY_LINK,
   MEDIUM_PRIORITY_LINK,
   URGENT_PRIORITY_LINK,
-} from "@/routes";
+} from "@/routes/index";
 import {
   AlertOctagon,
   AlertTriangle,

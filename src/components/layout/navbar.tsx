@@ -1,7 +1,7 @@
 import { AlignJustify, Moon, Search, Settings, Sun, User } from "lucide-react";
 import React from "react";
 import { Input } from "../ui/input";
-import { useUIStore } from "@/stores/ui-store";
+import { useUIStore } from "@/store/ui-store";
 
 const Navbar = () => {
   const isDarkMode = useUIStore((state) => state.isDarkMode);

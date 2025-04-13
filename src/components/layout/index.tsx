@@ -2,7 +2,7 @@
 import React, { useEffect } from "react";
 import Sidebar from "./sidebar/sidebar";
 import Navbar from "./navbar";
-import { useUIStore } from "@/stores/ui-store";
+import { useUIStore } from "@/store/ui-store";
 import { cn } from "@/lib/utils";
 
 const AppLayout = ({ children }: { children: React.ReactNode }) => {

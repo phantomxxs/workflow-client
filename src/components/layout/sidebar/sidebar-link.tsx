@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 
 interface SidebarLinkProps {
   href: string;
-  icon: LucideIcon;
+  icon?: LucideIcon;
   label: string;
   // isCollapsed: boolean;
 }
@@ -31,7 +31,7 @@ const SidebarLink = ({
         {isActive && (
           <div className="absolute left-0 top-0 h-[100%] w-[5px] bg-blue-200"></div>
         )}
-        <Icon className="text-gray-800 dark:text-gray-100" />
+        {Icon && <Icon className="text-gray-800 dark:text-gray-100" />}
         <span className="font-medium text-gray-800 dark:text-gray-100">
           {label}
         </span>

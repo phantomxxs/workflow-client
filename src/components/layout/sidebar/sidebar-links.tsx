@@ -5,7 +5,7 @@ import {
   TEAMS_ROUTES,
   TIMELINE_ROUTE,
   USERS_ROUTES,
-} from "@/routes";
+} from "@/routes/index";
 import { Briefcase, House, Search, Settings, User, Users } from "lucide-react";
 import React from "react";
 import SidebarLink from "./sidebar-link";
